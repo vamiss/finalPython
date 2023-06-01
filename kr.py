@@ -27,10 +27,14 @@ class Robot:
                 self.x -= 1
             else:
                 return 'unknown step used.'
-        return [self.x, self.y]
+        if self.x > 100 or self.x < 0 or self.y > 100 or self.y < 0:
+            print('robot exit the plane!')
+            raise SystemExit
+        else:
+            return [self.x, self.y]
 
-kaplan = Robot(101, 5)
-print(kaplan.move('NNSWEEEE'))
-print(kaplan.move('asdfEEE'))
+kaplan = Robot(55, 5)
+print(f'1st try: {kaplan.move("NNSWEEEE")}')
+print(f'2nd try: {kaplan.move("asdfEEE")}')
 
 # shepot dalyokih zvezd
